@@ -19,9 +19,8 @@ public class Solution
         for (int i=0; i<5; i++)
             list.add(scan.nextLine());
         for (int i=0; i<13; i++) {
-            String s = list.get(list.size()-1);
+            list.add(0, list.get(list.size()-1));
             list.remove(list.size()-1);
-            list.add(0, s);
         }
         for (String aList : list) System.out.println(aList);
      }
