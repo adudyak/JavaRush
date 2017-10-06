@@ -24,7 +24,7 @@ public class Solution
 
     public static ArrayList<String> doubleValues(ArrayList<String> list) {
         for (int i=0; i<list.size();) {
-            list.add(i+1, list.get(i));
+            list.add(i, list.get(i)); //+1 не за чем
             i+=2;
         }
         return list;
