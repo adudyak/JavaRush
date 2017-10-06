@@ -38,19 +38,13 @@ public class Solution
     }
 
     public static ArrayList<String> fix (ArrayList<String> list) {
-        for(int i = 0; i < list.size();)
+        list.removeIf(i -> i.contains("р") && !i.contains("л"));
+        for(int i = 0; i < list.size(); i++)
         {
-            if(list.get(i).contains("р") && list.get(i).contains("л"))
-                i++;
-            else if(list.get(i).contains("л")){
+            if (!list.get(i).contains("р") && list.get(i).contains("л")) {
                 list.add(i, list.get(i));
-                i+=2;
-            }
-            else if(list.get(i).contains("р"))
-                list.remove(i);
-                continue; //без этого проверка для следующего слова будет пропущена, т.к. на место удалённого слова встанет следующее, но индекс сдвинется на +1
-            else
                 i++;
+            }
         }
         return list;
     }
